@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"c0ecea161e5df860","type":"text","text":"NFC Reader","x":-279,"y":280,"width":319,"height":60,"color":"2"},
+		{"id":"fd57b07abe605b4e","type":"text","text":"NFC card/Tag","x":-279,"y":-260,"width":319,"height":60,"color":"4"},
+		{"id":"c0b61060c30b2791","type":"text","text":"Initialization with data (Like a SYN req Are2","x":-236,"y":40,"width":233,"height":80},
+		{"id":"7dc48be6b240aecb","type":"text","text":"Encrypts the challenge and sends it\n","x":-236,"y":-520,"width":250,"height":60},
+		{"id":"3600ea30b7e2c775","x":-560,"y":340,"width":250,"height":100,"type":"text","text":"Decrypts the Challenge and sends Open2 req (Like ACK)"},
+		{"id":"da77c9e1ceae2f1a","type":"text","text":"Encrypted data","x":-720,"y":37,"width":250,"height":60},
+		{"id":"8ab0fcbfab8f9112","type":"text","text":"Verifies & Decrypt the data and generates a challenge","x":360,"y":31,"width":294,"height":66}
+	],
+	"edges":[
+		{"id":"d03d5699c68533a7","fromNode":"c0ecea161e5df860","fromSide":"top","toNode":"c0b61060c30b2791","toSide":"bottom","toEnd":"none","color":"2"},
+		{"id":"08841394e1b83926","fromNode":"c0b61060c30b2791","fromSide":"top","toNode":"fd57b07abe605b4e","toSide":"bottom","color":"2","label":"Initiation req "},
+		{"id":"6196872f12686c38","fromNode":"fd57b07abe605b4e","fromSide":"left","toNode":"da77c9e1ceae2f1a","toSide":"top","toEnd":"none","color":"4","label":"Pass-1"},
+		{"id":"7879001ab36d9190","fromNode":"da77c9e1ceae2f1a","fromSide":"bottom","toNode":"c0ecea161e5df860","toSide":"left","color":"4"},
+		{"id":"3a4a9aaf55249b06","fromNode":"c0ecea161e5df860","fromSide":"bottom","toNode":"8ab0fcbfab8f9112","toSide":"bottom","toEnd":"none","color":"2"},
+		{"id":"4dd679093e91728d","fromNode":"8ab0fcbfab8f9112","fromSide":"top","toNode":"fd57b07abe605b4e","toSide":"right","color":"2","label":"Pass-2"},
+		{"id":"e6ce4e03eb1ad8b1","fromNode":"fd57b07abe605b4e","fromSide":"top","toNode":"7dc48be6b240aecb","toSide":"bottom","toEnd":"none","color":"4"},
+		{"id":"67d08c1389c168ed","fromNode":"7dc48be6b240aecb","fromSide":"right","toNode":"c0ecea161e5df860","toSide":"right","color":"4","label":"Pass-3"},
+		{"id":"11ce785bd8bfda8a","fromNode":"c0ecea161e5df860","fromSide":"bottom","toNode":"3600ea30b7e2c775","toSide":"bottom","toEnd":"none","color":"2"},
+		{"id":"9bce18dd9a1b3b93","fromNode":"3600ea30b7e2c775","fromSide":"top","toNode":"fd57b07abe605b4e","toSide":"left","color":"2","label":"Pass-4"}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"0556ce15fdf0e220","type":"text","text":"CIPURSE-enabled card","x":-220,"y":-400,"width":250,"height":50,"color":"1"},
+		{"id":"9e7b3a8f36d5dc7e","type":"text","text":"Encrypts the data and sends it","x":-220,"y":-580,"width":250,"height":60,"color":"1"},
+		{"id":"bd838dc5def65ec2","type":"text","text":"Card Reader","x":-300,"y":280,"width":460,"height":60,"color":"5"},
+		{"id":"df63d6162b3e3986","type":"text","text":"Sends a request with data\n(Protocol:- ISO/IEC 14443)","x":-180,"y":-200,"width":250,"height":60,"color":"3"},
+		{"id":"0a21f47737bea147","type":"text","text":"Decrypts the data and Generates another own challenge/data","x":160,"y":-40,"width":250,"height":80,"color":"5"},
+		{"id":"ec1c74f409250e35","type":"text","text":"Encrypted data","x":-500,"y":-70,"width":250,"height":60,"color":"1"}
+	],
+	"edges":[
+		{"id":"0c97477ae332a758","fromNode":"0556ce15fdf0e220","fromSide":"left","toNode":"ec1c74f409250e35","toSide":"top","toEnd":"none","color":"1","label":"Card Response(1)"},
+		{"id":"8bc081eff2be33fd","fromNode":"ec1c74f409250e35","fromSide":"bottom","toNode":"bd838dc5def65ec2","toSide":"left","color":"1"},
+		{"id":"4e55a540e5ab1ddc","fromNode":"bd838dc5def65ec2","fromSide":"top","toNode":"df63d6162b3e3986","toSide":"bottom","toEnd":"none","color":"3","label":"Initalization"},
+		{"id":"5f625bf66fc56f64","fromNode":"df63d6162b3e3986","fromSide":"top","toNode":"0556ce15fdf0e220","toSide":"bottom","color":"3"},
+		{"id":"81a661d41a452d56","fromNode":"bd838dc5def65ec2","fromSide":"right","toNode":"0a21f47737bea147","toSide":"bottom","toEnd":"none","color":"5","label":"Reader Response(2)"},
+		{"id":"cec9a3694942cb55","fromNode":"0a21f47737bea147","fromSide":"top","toNode":"0556ce15fdf0e220","toSide":"right","color":"5"},
+		{"id":"209a146737c37ed8","fromNode":"0556ce15fdf0e220","fromSide":"top","toNode":"9e7b3a8f36d5dc7e","toSide":"bottom","toEnd":"none","color":"1"},
+		{"id":"2317b5885cda07d4","fromNode":"9e7b3a8f36d5dc7e","fromSide":"right","toNode":"bd838dc5def65ec2","toSide":"bottom","color":"1","label":"Final verification(3)"}
+	]
+}
